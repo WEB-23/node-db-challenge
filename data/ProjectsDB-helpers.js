@@ -13,7 +13,6 @@ module.exports = {
 };
 
 function find() {
-	console.log('go to the find function');
 	return db('projects').then((projects) => {
 		return projects.map((project) => {
 			return { ...project, completed: Boolean(project.completed) };

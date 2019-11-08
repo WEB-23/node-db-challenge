@@ -35,7 +35,6 @@ router.get('/:id/tasks', (req, res) => {
 	db
 		.findTasks(req.params.id)
 		.then((account) => {
-			console.log(account);
 			if (!account) {
 				res.status(404).json({
 					message: 'The project with the specified ID does not exist.'
@@ -50,7 +49,6 @@ router.get('/:id/tasks', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	console.log(req.body);
 	if (!req.body.name || !req.body.completed) {
 		res.status(400).json({
 			errorMessage: 'Please provide name and completed for the project.'
@@ -70,7 +68,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/:id/tasks', (req, res) => {
-	console.log(req.body);
 	if (!req.body.description || !req.body.completed) {
 		res.status(400).json({
 			errorMessage: 'Please provide description and completed for the project.'
@@ -114,7 +111,6 @@ router.delete('/:id', (req, res) => {
 	db
 		.remove(req.params.id)
 		.then((account) => {
-			console.log(account);
 			if (!account) {
 				res.status(404).json({
 					message: 'The project with the specified ID does not exist.'

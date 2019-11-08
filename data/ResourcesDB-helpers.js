@@ -11,7 +11,6 @@ module.exports = {
 };
 
 function find() {
-	console.log('Got to the find function');
 	return db('resources');
 }
 

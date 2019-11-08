@@ -33,7 +33,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	console.log(req.body);
 	if (!req.body.name) {
 		res.status(400).json({
 			errorMessage: 'Please provide name for the resource.'
@@ -77,7 +76,6 @@ router.delete('/:id', (req, res) => {
 	db
 		.remove(req.params.id)
 		.then((account) => {
-			console.log(account);
 			if (!account) {
 				res.status(404).json({
 					message: 'The resource with the specified ID does not exist.'
